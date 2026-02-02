@@ -1,0 +1,10 @@
+name = "audiostreamly-upload"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "audiostreamly"
+
+[vars]
+CONVEX_URL = ""  # To be filled

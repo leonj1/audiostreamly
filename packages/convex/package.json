@@ -1,0 +1,17 @@
+{
+  "name": "@audiostreamly/convex",
+  "version": "1.0.0",
+  "description": "Convex backend for AudioStreamly podcast platform",
+  "type": "module",
+  "scripts": {
+    "dev": "convex dev",
+    "deploy": "convex deploy",
+    "codegen": "convex codegen"
+  },
+  "keywords": ["convex", "podcast", "audiostreamly"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "convex": "^1.31.7"
+  }
+}
