@@ -1,0 +1,9 @@
+# This directory contains generated audit reports and flow diagrams.
+# Reports are generated after /architect command completes.
+#
+# Files generated:
+#   - flow-{session_id}.md - Markdown with embedded Mermaid diagram
+#   - flow-{session_id}.mermaid - Raw Mermaid diagram file
+#
+# These files are optional to commit - uncomment the line in .gitignore
+# if you want to exclude them from version control.
