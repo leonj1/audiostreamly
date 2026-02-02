@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { ConvexClientProvider } from '@/components/ConvexClientProvider'
 
 export const metadata: Metadata = {
   title: 'AudioStreamly - Manage Your Podcast Audio Files with Ease',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <ConvexClientProvider>
+          {children}
+        </ConvexClientProvider>
+      </body>
     </html>
   )
 }

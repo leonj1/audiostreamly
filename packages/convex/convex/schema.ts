@@ -1,14 +1,19 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
+import { authTables } from "@convex-dev/auth/server";
 
 export default defineSchema({
-  users: defineTable({
-    email: v.string(),
-    name: v.string(),
+  // Auth tables from @convex-dev/auth
+  ...authTables,
+
+  // Custom users table extending the auth users table
+  // Note: authTables already includes a 'users' table, so we add custom fields here
+  userProfiles: defineTable({
+    userId: v.id("users"), // References the auth users table
     autumnCustomerId: v.optional(v.string()),
     workosId: v.optional(v.string()),
     createdAt: v.number(),
-  }).index("by_email", ["email"])
+  }).index("by_user", ["userId"])
     .index("by_workos", ["workosId"]),
 
   podcasts: defineTable({

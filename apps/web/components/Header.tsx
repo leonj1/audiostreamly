@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { AuthButton, UserInfo } from './AuthButton'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -31,14 +32,10 @@ export default function Header() {
             </a>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <a
-              href="#get-started"
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-medium rounded-lg transition-colors"
-            >
-              Get Started
-            </a>
+          {/* Auth Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <UserInfo />
+            <AuthButton />
           </div>
 
           {/* Mobile menu button */}
@@ -76,12 +73,12 @@ export default function Header() {
               <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Contact
               </a>
-              <a
-                href="#get-started"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-medium rounded-lg transition-colors w-full"
-              >
-                Get Started
-              </a>
+              <div className="pt-2 border-t border-gray-100">
+                <UserInfo />
+                <div className="mt-2">
+                  <AuthButton />
+                </div>
+              </div>
             </div>
           </div>
         )}
